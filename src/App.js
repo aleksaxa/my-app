@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
-import Foother from './components/foother';
-import Header from './components/header';
-import Nav from './components/nav';
-import Profile from './components/profile';
+import Dialogs from './components/Dialogs/dialogs';
+import Foother from './components/Foother/foother';
+import Header from './components/Header/header';
+import Nav from './components/Nav/nav';
+import Profile from './components/Profile/profile';
 
 
 const App = () => {
@@ -11,8 +12,11 @@ const App = () => {
     <div className='app-wrapper'>
       <Header />
       <Nav />
-      <Profile />
-      sadfsd
+      <div className='app-wrapper-content'>
+        {/*}Profile />*/}
+        <Dialogs />
+      </div>
+
       <Foother />
     </div>
   );

@@ -1,10 +1,10 @@
 import React from 'react';
-import './foother.css';
+import s from './foother.module.css';
 
 const Foother = () => {
     return (
-        <div className="foother">
-            Foother
+        <div className={s.foother}>
+            Foother!!
         </div>
     );
 }
