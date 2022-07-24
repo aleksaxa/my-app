@@ -1,14 +1,14 @@
 import React from 'react';
-import Preloader from '../../Common/Preloader/preloader';
-import s from './profileinfo.module.css';
+
 
 class ProfileStatus extends React.Component {
+    
     state = {
-        editMode: false
+        editMode: false,
+        status: this.props.status
     }
 
     activateEditMode = () => {
-        debugger;
         this.setState( {
             editMode : true
         } )
@@ -17,7 +17,15 @@ class ProfileStatus extends React.Component {
         this.setState( {
             editMode : false
         } )
+        this.props.updateStatus(this.state.status);
     }
+    onStatusChange = (e) => {
+        this.setState({
+            status: e.currentTarget.value
+        });
+        
+    }
+
 
     render() {
         return (
@@ -29,7 +37,7 @@ class ProfileStatus extends React.Component {
                 }
                 {this.state.editMode &&
                     <div>
-                        <input autoFocus={true} onBlur={ this.diactivateEditMode } value={this.props.status} />
+                        <input onChange={this.onStatusChange} value={this.state.status} autoFocus={true} onBlur={ this.diactivateEditMode } />
                     </div>
                 }
             </div>
