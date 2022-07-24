@@ -12,4 +12,8 @@
 
 .i_username {
     padding: 10px;
+    font-size: 34px;
+    font-style: italic;
+    color: rgb(68, 155, 41);
+    font-weight: 400;
 }
