@@ -1,0 +1,58 @@
+.users {
+    background-color: rgb(61, 80, 80);
+    display: grid;
+    height: 100%;
+}
+.user {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    margin: 0px 7px 7px 7px;
+    padding-bottom: 10px;
+    border: 1px outset rgb(100, 96, 96);
+    border-radius: 20px;
+    background: rgb(124, 123, 118);
+
+}
+.pageNumb {
+    margin: 7px 7px -7px 7px;
+}
+.img {
+    padding: 10px;
+    max-width: 80px;
+    max-height: 60px;
+}
+.button {
+    background-color: rgb(117, 152, 182);
+    padding: 5px;
+    margin-left: 15px;
+}
+.fullName {
+    padding-left: 10px;
+    font-size: 25px;
+    font-weight: bolder;
+}
+.city {
+    padding-top: 10px;
+    padding: 2px;
+    font-size: 14px;
+}
+.status {
+    padding: 2px;
+    font-size: 14px;
+}
+.country {
+    padding: 2px;
+    font-size: 14px;
+}
+.img_button {
+
+}
+
+.name_country_status {
+
+}
+.selectedPage {
+    font-weight: bolder;
+    background-color: burlywood;
+    border-color: burlywood;
+}

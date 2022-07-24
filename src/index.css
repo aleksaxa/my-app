@@ -5,6 +5,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url(https://lesta.ru/static/img/wargaming_ships_patt.jpg) 50% 0;
+  background-image: url(https://lesta.ru/static/img/wargaming_ships_patt.jpg);
+  background-position-x: 50%;
+  background-position-y: 0px;
+  background-size: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
 }
 
 code {

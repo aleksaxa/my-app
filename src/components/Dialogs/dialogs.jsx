@@ -1,5 +1,5 @@
 import React from 'react';
-import { addMessageActionCreator, updateNewMessageTextActionCreator } from '../../redux/dialogs-reducer';
+import { Navigate } from 'react-router-dom';
 import DialogItem from './DialogItem/dialogitem';
 import s from './dialogs.module.css';
 import Message from './Message/message';
@@ -7,21 +7,21 @@ import Message from './Message/message';
 
 
 const Dialogs = (props) => {
-    debugger;
-    let dialogsElements = props.state.dialogsData.map(dialog => <DialogItem name={dialog.name} id={dialog.id} />);
-    let messageElements = props.state.messageData.map(message => <Message message={message.message} />);
-
+    let dialogsElements = props.dialogsData.map(dialog => <DialogItem name={dialog.name} key={dialog.id} id={dialog.id} />);
+    let messageElements = props.messageData.map(message => <Message message={message.message} key={message.id} />);
 
     let newMessageElement = React.createRef();
 
-    let addMessage = () => {
-        props.dispatch(addMessageActionCreator());
+    let onAddMessage = () => {
+        props.addMessage();
     }
 
     let onMessageChange = () => {
         let messg = newMessageElement.current.value;
-        props.dispatch(updateNewMessageTextActionCreator(messg));
+        props.updateNewMessageText(messg)
     }
+
+    if (props.isAuth === false) return <Navigate to={"/login"} />;
 
     return (
         <div className={s.dialogs}>
@@ -31,8 +31,8 @@ const Dialogs = (props) => {
             <div className={s.messages}>
                 <div>{messageElements}</div>
                 <div>
-                    <div><textarea onChange={onMessageChange} ref={newMessageElement} value={props.state.newMessageText} placeholder='Введите ваше сообщение' /></div>
-                    <div><button onClick={addMessage}>Add message</button></div>
+                    <div><textarea onChange={onMessageChange} ref={newMessageElement} value={props.newMessageText} placeholder='Введите ваше сообщение' /></div>
+                    <div><button onClick={onAddMessage}>Add message</button></div>
                 </div>
             </div>
         </div>

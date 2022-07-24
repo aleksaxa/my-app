@@ -1,36 +1,40 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Dialogs from './components/Dialogs/dialogs';
 import Foother from './components/Foother/foother';
-import Header from './components/Header/header';
 import Nav from './components/Nav/nav';
-import Profile from './components/Profile/profile';
+import ProfileConteiner from './components/Profile/profileConteiner';
 import Music from './components/Music/music';
 import News from './components/News/news';
 import Settings from './components/Settings/settings';
+import DialogsConteiner from './components/Dialogs/dialogsConteiner';
+import UsersConteiner from './components/Users/usersConteiner';
+import HeaderConteiner from './components/Header/headerConteiner';
+import Login from './components/Login/login';
 
 
-const App = (props) => {
 
+
+const App = () => {
   return (
-    <BrowserRouter>
-      <div className='app-wrapper'>
-        <Header />
-        <Nav />
-        <div className='app-wrapper-content'>
-          <Routes>
-            <Route path='/dialogs' element={<Dialogs state={props.state.messagePage} dispatch={props.dispatch} />} />
-            <Route path='/profile' element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />} />
-            <Route path='/music' element={<Music />} />
-            <Route path='/news' element={<News />} />
-            <Route path='/settings' element={<Settings />} />
-          </Routes>
-        </div>
-        <Foother />
+    <div className='app-wrapper'>
+      <HeaderConteiner />
+      <Nav />
+      <div className='app-wrapper-content'>
+        <Routes>
+          <Route path='/login/*' element={<Login />} />
+          <Route path='/dialogs/*' element={<DialogsConteiner />} />
+          <Route path='/profile' element={<ProfileConteiner />} />
+          <Route path='/profile/:userId' element={<ProfileConteiner />} />
+          <Route path='/users/*' element={<UsersConteiner />} />
+          <Route path='/music/*' element={<Music />} />
+          <Route path='/news/*' element={<News />} />
+          <Route path='/settings/*' element={<Settings />} />
+        </Routes>
       </div>
-    </BrowserRouter>
-  );
+      <Foother />
+    </div>
+  )
 }
 
 export default App;

@@ -1,9 +1,46 @@
 .header {
+    display: grid;
+    grid-template-columns: 1fr 7fr 3fr 1fr;
+    grid-template-rows: 100%;
     grid-area: h;
-    background-color: aqua;
+    background-color: rgba(139, 135, 114, 0.418);
 }
 .img {
     width: auto;
-    height: 56px;
-    margin: 2px;
+    height: 70px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+.text {
+    font-size: 40px;
+    color: rgb(248, 247, 168);
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    font-style: italic;
+}
+.items {
+    display: grid;
+    color: rgb(248, 247, 168);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 20px;
+    text-align: center;
+}
+.loginBlock {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: #ff6600;
+    text-decoration: none;
+    font-size: 22px;
+   
+}
+
+.loginBlock a {
+    
+    
 }
