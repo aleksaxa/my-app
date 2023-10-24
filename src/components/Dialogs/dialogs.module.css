@@ -13,3 +13,6 @@
     color: rgb(216, 230, 230);
     padding: 10px;
 }
+.button {
+    cursor: pointer;
+}

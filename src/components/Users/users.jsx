@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import s from './users.module.css';
 
 let Users = (props) => {
-
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
 
     let pages = [];
@@ -37,7 +36,7 @@ let Users = (props) => {
                 <span className={s.name_country_status}>
                     <span>
                         <div className={s.fullName}>{u.name}</div>
-                        <div className={s.status}>{u.status}</div>
+                        <div className={s.status}>{u.status != null ? u.status : 'Статус не указан'}</div>
                     </span>
                     <span>
                         <div className={s.city}>{"u.location.city"}</div>
