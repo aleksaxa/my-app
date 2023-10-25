@@ -1,8 +1,8 @@
 .app-wrapper {
     margin: 0 auto;
+    max-width: 100%;
+    min-height: 920px;
     display: grid;
-    max-width: 1200px;
-    min-height: 939px;
     grid-template-areas:
         "h h"
         "n p"
@@ -11,6 +11,17 @@
     grid-template-columns: 2fr 10fr;
 }
 
+.app-wrapper-login {
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas:
+        "l l"
+        "f f";
+    grid-template-rows: 78% 22%;
+    grid-template-columns: 50% 50%;
+    max-width: 100%;
+    min-height: 920px;
+}
 .app-wrapper-content {
     grid-area: p;
     background-color: rgb(243, 247, 240);

@@ -1,0 +1,76 @@
+.Login {
+    display: grid;
+    grid-area: l;
+    grid-template-areas:
+        "bn bl";
+    grid-template-columns: 50% 50%;
+    background-color: #f0f2f5;
+}
+.Block_NameCompany{
+    grid-area: bn;
+    text-align: center;
+    margin: auto 10px auto auto;
+    max-width: 500px;
+}
+.Block_NameCompany h1 {
+    color: #310cd6;
+    font-size: 70px;
+    font-style: italic;
+    text-align: left;
+    margin: 10px;
+}
+.Block_NameCompany p {
+    color: #000000;
+    font-size: 30px;
+    text-align: left;
+    margin: 10px;
+    word-break: normal;
+}
+.Block_Login{
+    grid-area: bl;
+    text-align: center;
+    margin: auto auto auto 10px;
+    background-color: #fff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+    box-sizing: border-box;
+    width: 396px;
+    min-height: 300px;
+}
+.Block_Login h1{
+    margin: 10px 30px 20px 30px;
+}
+.InputEmailPsaaword {
+    display: grid;
+    height: 40px;
+    margin: 10px 30px 20px 30px;
+}
+.InputEmailPsaaword div{
+    display: grid;
+}
+.InputEmailPsaaword input{
+    border: 1px solid #ccd0d5;
+    border-radius: 6px;
+    padding: 5px;
+}
+.CheckBox{
+    display: grid;
+    grid-template-columns: 0.2fr 10fr;
+    margin: 5px 30px 10px 30px;
+}
+.CheckBox span {
+    margin-left: 10px;
+text-align: left;
+}
+.ButtonLogin {
+    margin: 20px 30px 30px 30px;
+}
+.ButtonLogin button {
+    height: 40px;
+    width: 100%;
+    border-radius: 6px;
+    border: 0px;
+    color: #ffffff;
+    background-color: #310cd6;
+}

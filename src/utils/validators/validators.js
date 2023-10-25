@@ -1,16 +1,16 @@
 export const required = value => {
     if (value) return undefined;
 
-    return "Field is required";
+    return "Поле не должно быть пустым";
 }
 
 
 export const maxLengthCreator = (maxLenght) => (value) => {
-    if (value.length > maxLenght) return "Max lenght is "+maxLenght+" symbols";
+    if (value.length > maxLenght) return "Максимальное число "+maxLenght+" символов";
     return undefined;
 }
 
 export const minLengthCreator = (minLenght) => (value) => {
-    if (value.length < minLenght) return "Min lenght is "+minLenght+" symbols";
+    if (value.length < minLenght) return "Минимальное число "+minLenght+" symbols";
     return undefined;
 }

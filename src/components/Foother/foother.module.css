@@ -1,4 +1,15 @@
 .foother {
     grid-area: f;
-    background-color: coral;
+    background-color: #fff;
+}
+.footherBlock {
+    max-width: 1200px;
+    margin: 60px auto;
+}
+.footherBlock div{
+    display: inline-block;
+    margin: 3px 10px;
+    font-size: 14px;
+    line-height: 1.0;
+    color: #737373;
 }

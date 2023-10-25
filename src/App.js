@@ -28,8 +28,7 @@ class App extends Component {
   render() {
     if (this.props.isAuth === false) {
       return (
-        <div className='app-wrapper' >
-          <HeaderConteiner />
+        <div className='app-wrapper-login' >
           <Login />
           <Foother />
         </div>
