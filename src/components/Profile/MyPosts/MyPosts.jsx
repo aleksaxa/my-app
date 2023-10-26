@@ -6,8 +6,8 @@ import s from './MyPosts.module.css';
 import Post from './Post/Post';
 
 
-const MyPosts = (props) => {
-    let postsElements = props.postsData.map(posts => <Post message={posts.message} key={posts.id} likesCount={posts.likes} />);
+const MyPosts = React.memo(props => {
+    let postsElements = [...props.postsData].reverse().map(posts => <Post message={posts.message} key={posts.id} likesCount={posts.likes} />);
 
     let addNewPost = (values) => {
         props.addPost(values.newPostText);
@@ -22,7 +22,7 @@ const MyPosts = (props) => {
             {postsElements}
         </div>
     );
-}
+})
 
 
 const maxLength10 = maxLengthCreator(10);

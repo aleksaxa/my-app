@@ -3,12 +3,15 @@ import { profileAPI, usersAPI } from "../api/api";
 const ADD_POST = 'ADD-POST';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_STATUS = 'SET_STATUS';
+const DELETE_POST = 'DELETE_POST';
 
 
 let initialState = {
     postsData: [
         { id: 1, message: 'Hi, how are you?', likes: '3' },
-        { id: 2, message: 'It\'s my first post', likes: '12' }
+        { id: 2, message: 'It\'s my first post', likes: '12' },
+        { id: 3, message: 'It\'s my first post', likes: '8' },
+        { id: 4, message: 'It\'s my first post', likes: '5' }
     ],
     profile: null,
     status: ""
@@ -16,6 +19,9 @@ let initialState = {
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
+        case DELETE_POST:
+            return {...state, postsData: state.postsData.filter(p => p.id != action.postId)}
+
         case ADD_POST:
             let newPost = action.newPostText;
             return {
@@ -35,6 +41,7 @@ const profileReducer = (state = initialState, action) => {
 }
 
 export const addPostActionCreator = (newPostText) => ({ type: 'ADD-POST', newPostText })
+export const deletePost = (postId) => ({ type: 'DELETE_POST', postId })
 
 export const setUserProfile = (profile) => ({ type: 'SET_USER_PROFILE', profile: profile })
 export const setStatus = (status) => ({ type: 'SET_STATUS', status: status })
